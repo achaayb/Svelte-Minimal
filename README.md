@@ -5,9 +5,11 @@ Minimal Svelte + Vite boilerplate
 ## Tree
 
 ```console
-$ tree
+$ tree -la -I 'dist|node_modules|.git'
 .
 ├── Dockerfile
+├── .dockerignore
+├── .gitignore
 ├── index.html
 ├── LICENSE
 ├── package.json
@@ -18,7 +20,8 @@ $ tree
 │   └── main.js
 └── vite.config.js
 
-2 directories, 9 files
+2 directories, 11 files
+
 ```
 
 ## Package
@@ -38,10 +41,15 @@ $ tree
 }
 ```
 
+## Shallow Clone
+```bash
+git clone --depth 1 https://github.com/achaayb/Svelte-Minimal <project-name>
+```
+
 ## Build & Run
 ```bash
-podman|docker build -t svelte-minimal .
-podman|docker run -p 8080:80 svelte-minimal
+podman|docker build -t <image-name> .
+podman|docker run -p 8080:80 <image-name>
 ```
 
 ## Dockerfile
